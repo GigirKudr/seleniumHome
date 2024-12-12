@@ -42,8 +42,8 @@ public class CardTest {
     @Test
     void Test(){
         List<WebElement> inputs = driver.findElements(By.cssSelector(".input__control"));
-        inputs.get(0).sendKeys("Кудряшов Антон");
-        inputs.get(1).sendKeys("+79119119191");
+        driver.findElement(By.cssSelector("[data-test-id = 'name'] input")).sendKeys("Кудряшов Антон");
+        driver.findElement(By.cssSelector("[data-test-id = 'phone'] input")).sendKeys("+12345678901");
         driver.findElement(By.cssSelector("[data-test-id = 'agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
         WebElement result = driver.findElement(By.cssSelector("[data-test-id='order-success']"));
